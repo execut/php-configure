@@ -1,12 +1,17 @@
 #!/bin/bash
-apt-get install aptitude emacs nginx git;
+apt-get install aptitude emacs nginx git libpspell-dev;
 aptitude install gcc libxml2-utils libxml2-dev libcurl4-openssl-dev sqlite libpcre3-dev libbz2-dev libjpeg-dev libpng-dev libxpm-dev libfreetype6-dev libgmp3-dev libmcrypt-dev make freetds-dev libpq-dev libreadline-dev pkg-config libicu-dev g++ autoconf libmagickwand-dev ucf libc-client2007e-dev libc6 unzip unrar libkrb5-dev libc-client-dev libjxr-tools webp libwebp-dev libonig-dev libzip-dev autoconf;
 
 cd /usr/local/etc;
 rm -Rf php-*;
-VERSION=8.0.11;
-wget https://www.php.net/distributions/php-$VERSION.tar.gz;
-tar -xvf php-*.tar.gz;
+VERSION=8.1.0;
+
+if [ ! -d "php-$VERSION" ]
+then
+  wget https://www.php.net/distributions/php-$VERSION.tar.gz;
+  tar -xvf php-*.tar.gz;
+fi
+
 cd php-$VERSION;
 
 # configure php:
@@ -43,6 +48,7 @@ cd php-$VERSION;
     '--with-jpeg'\
     '--with-xpm'\
     '--with-webp'\
-    '--with-unixODBC';
+    '--with-unixODBC'\
+    '--with-pspell';
 make
 make install
