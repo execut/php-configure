@@ -1,7 +1,7 @@
 #!/bin/sh
 cd /usr/local/etc;
 rm -Rf xdebug*
-VERSION=3.1.2;
+VERSION=3.1.3;
 wget http://xdebug.org/files/xdebug-$VERSION.tgz;
 tar -xvf xdebug-$VERSION.tgz;
 mv xdebug-$VERSION xdebug-src;

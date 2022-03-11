@@ -4,7 +4,7 @@ aptitude install gcc libxml2-utils libxml2-dev libcurl4-openssl-dev sqlite libpc
 
 cd /usr/local/etc;
 rm -Rf php-*;
-VERSION=8.1.0;
+VERSION=8.1.3;
 
 if [ ! -d "php-$VERSION" ]
 then
@@ -34,7 +34,7 @@ cd php-$VERSION;
     '--with-mysqli'\
     '--with-pdo-mysql'\
     '--with-pdo-pgsql'\
-    '--disable-dba' '--without-unixODBC'\
+    '--disable-dba'\
     '--enable-mbstring' '--without-pspell' '--with-curl' '--disable-posix' '--disable-sysvmsg'\
     '--disable-sysvshm' '--disable-sysvsem'\
     '--enable-short-tags'\
@@ -48,7 +48,6 @@ cd php-$VERSION;
     '--with-jpeg'\
     '--with-xpm'\
     '--with-webp'\
-    '--with-unixODBC'\
     '--with-pspell';
 make
 make install
