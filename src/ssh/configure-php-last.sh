@@ -1,6 +1,6 @@
 #!/bin/bash
 apt-get install aptitude emacs nginx git libpspell-dev;
-aptitude install gcc libsodium libxml2-utils libxml2-dev libcurl4-openssl-dev sqlite libpcre3-dev libbz2-dev libjpeg-dev libpng-dev libxpm-dev libfreetype6-dev libgmp3-dev libmcrypt-dev make freetds-dev libpq-dev libreadline-dev pkg-config libicu-dev g++ autoconf libmagickwand-dev ucf libc-client2007e-dev libc6 unzip unrar libkrb5-dev libc-client-dev libjxr-tools webp libwebp-dev libonig-dev libzip-dev autoconf;
+aptitude install gcc libsodium-dev libxml2-utils libxml2-dev libcurl4-openssl-dev sqlite libpcre3-dev libbz2-dev libjpeg-dev libpng-dev libxpm-dev libfreetype6-dev libgmp3-dev libmcrypt-dev make freetds-dev libpq-dev libreadline-dev pkg-config libicu-dev g++ autoconf libmagickwand-dev ucf libc-client2007e-dev libc6 unzip unrar libkrb5-dev libc-client-dev libjxr-tools webp libwebp-dev libonig-dev libzip-dev autoconf;
 
 cd /usr/local/etc;
 rm -Rf php-*;
@@ -42,7 +42,6 @@ cd php-$VERSION;
     '--enable-phpdbg'\
     '--enable-intl'\
     '--enable-bcmath'\
-    '--enable-apcu'\
     '--with-zip'\
     '--enable-gd'\
     '--with-freetype'\
