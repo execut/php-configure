@@ -4,7 +4,7 @@ aptitude install gcc libsodium-dev libxml2-utils libxml2-dev libcurl4-openssl-de
 
 cd /usr/local/etc;
 rm -Rf php-*;
-VERSION=8.1.5;
+VERSION=8.1.8;
 
 if [ ! -d "php-$VERSION" ]
 then
